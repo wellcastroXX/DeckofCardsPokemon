@@ -2,6 +2,9 @@
 
 TCG de cartas do pokemon, desenvolvido em Angular 17+ ***
 
+## Descrição:
+Meu foco foi colocar no código mais estrutura, design e componentização de componentes e serviços.
+
 ## Arquitetura
 
 - MVC
@@ -13,8 +16,8 @@ TCG de cartas do pokemon, desenvolvido em Angular 17+ ***
 ## Features
 
 - Infragistics
-- - Tailwindcss
-- APIRest GET | POST | PUT | DELETE 
+- Tailwindcss
+- APIRest GET | POST
   [documentação online](https://docs.pokemontcg.io/);
 - Armazenamento local
 - Lista de cartas alimentado pela API e gerenciada localmente pelo localstorage por uma
@@ -22,7 +25,9 @@ decisão de modelo de interface e tempo.
 - Cadastro de baralho
 - Atualizaçãao de baralho
 - Exclusão de baralho
+- Serviço de Requisição
 - UI/UX
+  
 
 ## Testar o projeto
 
