@@ -1,27 +1,35 @@
-# DeckOfCardsPokemon
+# TCG Pokemon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+TCG de cartas do pokemon, desenvolvido em Angular 17+ ***
 
-## Development server
+## Arquitetura
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- MVC
 
-## Code scaffolding
+## Gerenciador de modulos
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Coponentizado
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Infragistics
+- - Tailwindcss
+- APIRest GET | POST | PUT | DELETE 
+  [documentação online](https://docs.pokemontcg.io/);
+- Armazenamento local
+- Lista de cartas alimentado pela API e gerenciada localmente pelo localstorage por uma
+decisão de modelo de interface e tempo. 
+- Cadastro de baralho
+- Atualizaçãao de baralho
+- Exclusão de baralho
+- UI/UX
 
-## Running unit tests
+## Testar o projeto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- 1: ng serve
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter ajuda para começar a desenvolver Angular, consulte o
+[documentação online](https://angular.io/), que oferece tutoriais,
+exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.
+exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.
