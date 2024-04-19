@@ -1,0 +1,13 @@
+<img src="assets/img/logo.png" class="logo" [ngClass]="{'hidden': isExpanded}">
+<div class="container" [ngClass]="{'hidden': isExpanded}">
+  <div class="content">
+    <h1>Bem-vindo ao seu novo TCG Pokemon</h1>
+    <p>Seu novo modo de conhecer todas as cartas do pokemon <br>para gerenciar, criar baralhos e jogar</p>
+    <button class="start-button" (click)="expandDiagonal()">Começar</button>
+  </div>
+</div>
+<div class="pokemon-container" [ngClass]="{'hidden': isExpanded}">
+    <img src="assets/img/charizard-home.png" class="pokemon-img floating">
+</div>
+<div class="diagonal-divider" [ngClass]="{'expanded': isExpanded}"></div>
+  

@@ -1,0 +1,11 @@
+<!-- playing-table.component.html -->
+<div class="frame" [ngClass]="{'show': showImage}"></div>
+<div class="container" [ngClass]="{'showc': showImage}">
+  <div class="element">
+    <span>{{ title }}</span>
+    <img class="top-frame" src="../../assets/img/Pokemon-Ball.png">
+  </div>
+  <div class="body-deck">
+    <app-user-cards></app-user-cards>
+  </div>
+</div>

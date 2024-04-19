@@ -1,0 +1,75 @@
+.actions-container{
+    position: fixed;
+    bottom: 2rem;
+    width: 50%;
+    height: 120px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    z-index: 10000;
+}
+.button-action {
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease; 
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+}
+
+.button-action[btn-action="1"] { margin-top: 0rem; }
+.button-action[btn-action="2"] { margin-top: -3.5rem; }
+.button-action[btn-action="3"] { margin-top: -5rem; }
+.button-action[btn-action="4"] { margin-top: -3.5rem; }
+.button-action[btn-action="5"] { margin-top: 0rem; }
+
+.button-action:hover {
+    transform: translateY(-5px);
+    height: 84px;
+    width: 84px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.button-action igx-icon {
+    font-size: 40pt;
+    text-align: center;
+    color: #333;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-btn{
+  width: 23px; 
+  height: 23px;
+  margin: auto;
+  display: block;
+}
+
+.icon-btn-cards{
+  width: 80px;
+  height: 100%; 
+  margin: auto;
+  display: block;
+}
+
+.tooltip-text {
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12px;
+    color: var(--white);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-family: 'cocogoose', sans-serif; 
+    font-weight: normal;
+}
+
+.button-action:hover .tooltip-text {
+    opacity: 1;
+}

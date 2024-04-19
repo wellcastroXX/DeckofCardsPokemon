@@ -1,0 +1,64 @@
+<div class="bg-blue-500 p-4 rounded-lg shadow-lg">
+  <!-- MODE CREATOR - modo de criacao de baralho -->
+  <div *ngIf="loading" class="container">
+    <div class="load">
+        <div class="loader">
+            <img src="../../../assets/img/Pokemon-Ball.png">
+        </div>
+    </div>
+  </div>
+  <ng-container *ngIf="deckCards">
+    <div *ngIf="deckCards == true">
+        <div class="createDeck">
+            <div class="container">
+                <div class="left">
+                    <div class="card mr-4" card-generator="1">
+                      <img src="../../../assets/img/logo.png">
+                    </div>
+                    <div class="card" card-generator="2">
+                      <img src="../../../assets/img/logo.png">
+                    </div>
+                    <div class="card ml-4" card-generator="3">
+                      <img src="../../../assets/img/logo.png">
+                    </div>
+                    <div >
+                      <button igxRipple class="btn-add-card" (click)="addCard()">Adicionar carta</button>
+                    </div>
+                </div>
+                <div class="center">
+                    <div class="flex justify-center">
+                      <div class="w-full max-w-screen-lg">
+                        <div class="grid grid-cols-3 gap-4">
+                          <app-card *ngFor="let card of cards" [card]="card" class="card-item"></app-card>
+                        </div>
+                      </div>
+                    </div>
+                  </div>                                         
+            </div>
+        </div>
+      </div>
+  </ng-container>
+  <ng-container  *ngIf="!deckCards">
+    <div class="container-section fixed2 inset-02 flex2 items-center justify-center">
+        <div class="flex2 flex-nowrap2 overflow-auto2">
+          <ng-container *ngFor="let deck of MyDeck">
+            <div class="modal mx-4"> <!-- Added mx-4 to add margin between modals -->
+              <img class="logo-modal" src="../../../assets/img/logo.png">
+              <h2>{{ deck.name }}</h2>
+              <div class="center-buttons">
+                <button class="details-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
+                  Detalhes
+                </button>
+                <button class="edit-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
+                  Editar
+                </button>
+                <button class="remove-btn mx-2" igxRipple (click)="removeDeck(deck)" btn-action="3">
+                  Remover
+                </button>
+              </div>
+            </div>
+          </ng-container>
+        </div>
+    </div>
+  </ng-container>
+</div>

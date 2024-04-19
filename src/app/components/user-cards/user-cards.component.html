@@ -1,0 +1,26 @@
+<div class="flex justify-center space-x-4">
+  <app-actions (MakeADeckButton)="MakeADeck()" (ViewDecksButton)="ViewDecks()"></app-actions>
+  <div *ngIf="isModeDeckCardsInitialized">
+    <div *ngIf="actionsComponent?.makeDeskCards == true">
+      <div class="modal" >
+        <img class="logo-modal" src="../../../assets/img/logo.png">
+        <h2>Você não tem <br>um baralho</h2>
+         <span>Clique em "Criar baralho"<br> a baixo</span>
+      </div>
+    </div>
+    <div class="modal" *ngIf="actionsComponent?.makeDeskCards == false">
+      <img class="logo-modal" src="../../../assets/img/logo.png">
+      <h2>Nome do baralho:</h2>
+      <input #deckInput placeholder="Baralho" [(ngModel)]="name">
+      <button igxRipple *ngIf="name" (click)="saveName()">
+        <igx-icon fontSet="material" size="small">
+            <img class="icon-btn" src="../../../assets/icons/right-arrow.png">
+        </igx-icon>
+      </button>
+    </div>
+  </div>
+  <div class="table" *ngIf="!isModeDeckCardsInitialized">
+    <app-deck></app-deck>
+  </div>
+</div>
+  
