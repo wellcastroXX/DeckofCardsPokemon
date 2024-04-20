@@ -1,9 +1,9 @@
+
 .body {
-  display: block;
   width: 100%;
   height: 100vh;
   background: linear-gradient(90deg, #62D692, #0C6C72);
-  position: relative;
+  position: absolute;
   overflow: hidden;
   z-index: 998;
 }

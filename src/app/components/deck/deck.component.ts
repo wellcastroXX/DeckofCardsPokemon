@@ -58,20 +58,26 @@ export class DeckComponent {
         return;
       }
       
-      this.service.getRandomCard().subscribe(card => {
-        console.log(card);
-  
+      this.service.getRandomCard().subscribe(generatedCard => {
+        console.log(generatedCard);
+        const cardName = generatedCard.name;
+        const cardsWithSameName = this.selectedDeck.cards.filter((card: Card) => card.name === cardName);
+    
         if (this.selectedDeck.cards.length >= 60) {
           this.recused = true;
           setTimeout(() => {
             this.recused = false;
           }, 500);
         } else {
-          this.selectedDeck.cards.push(card);
-          this.deckService.saveDeck(this.selectedDeck);
-          setTimeout(() => {
-            this.loading = false;
-          }, 2000);
+          if (cardsWithSameName.length >= 4) {
+            this.addCard();
+          } else {
+            this.selectedDeck.cards.push(generatedCard);
+            this.deckService.saveDeck(this.selectedDeck);
+            setTimeout(() => {
+              this.loading = false;
+            }, 2000);
+          }
         }
       });
     } else {
