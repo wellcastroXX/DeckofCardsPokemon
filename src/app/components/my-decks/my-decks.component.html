@@ -1,0 +1,19 @@
+<ng-container>
+  <div class="modal-container">
+    <div class="modal" *ngFor="let deck of MyDeck">
+      <img class="logo-modal" src="../../../assets/img/logo.png">
+      <h2>{{ deck.name }}</h2>
+      <div class="center-buttons">
+        <button class="details-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
+          Detalhes
+        </button>
+        <button class="edit-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
+          Editar
+        </button>
+        <button class="remove-btn mx-2" igxRipple (click)="removeDeck(deck)" btn-action="3">
+          Remover
+        </button>
+      </div>
+    </div>
+  </div>
+</ng-container>

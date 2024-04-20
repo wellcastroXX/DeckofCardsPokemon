@@ -1,0 +1,74 @@
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.modal {
+  width: 240px;
+  height: 380px;
+  background-color: var(--four-color);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 80%;
+  text-align: center;
+  margin: 0 10px;
+  margin-top: -8%;
+  position: relative;
+}
+
+.logo-modal {
+  margin-top: 20px;
+  height: 40px;
+  margin: auto;
+  display: block;
+}
+
+h2 {
+  font-size: 15pt;
+  color: var(--white);
+  text-align: center;
+  font-family: 'cocogoose', sans-serif;
+  font-weight: bold;
+  margin-top: 5rem;
+  margin-bottom: 1rem;
+  line-height: 20px;
+}
+
+.center-buttons {
+  position: absolute;
+  bottom: 20px; 
+  left: 0;
+  width: 100%;
+}
+
+button {
+  background-color: var(--secondary-color);
+  border-radius: 50%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+  height: 60px;
+  width: 60px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'cocogoose', sans-serif;
+  font-weight: normal;
+  color: var(--white);
+  font-size: 8pt;
+  margin: 5px;
+}
+
+button:hover {
+  background-color: var(--four-color);
+  
+}
+.details-btn{ background-color: var(--secondary-color); }
+.edit-btn { background-color: var(--primary-color); }
+.remove-btn { background-color: var(--third-color); }

@@ -19,7 +19,8 @@ export class DeckComponent {
   ID: any = '';
   selectedDeck: any = null;
   cards: any[] = [];
-  loading: boolean = false; 
+  loading: boolean = false;
+  recused: boolean = false;
 
   constructor(private deckService: DeckService, private service: Service) {
     this.actionsComponent!;
@@ -37,14 +38,6 @@ export class DeckComponent {
     }
   }
 
-  toggleModeDeckCards(deck: any) {
-    console.log(deck); 
-    this.selectedDeck = deck;
-    this.modeDeckCards = true;
-    this.deckCards = true;
-    this.cards = this.selectedDeck.cards;
-  }
-
   saveName() {
     const deck = { id: this.deckService.generateId(), name: this.name, cards: [] };
     this.deckService.saveDeck(deck);
@@ -53,39 +46,51 @@ export class DeckComponent {
   }
 
   addCard() {
-    if (!this.selectedDeck) {
-      console.error('Nenhnum baralho selecionado');
-      return;
-    }
-
-    if (this.selectedDeck.cards.length >= 60) {
-      console.error('Maximum number of cards reached for this deck!');
-      return;
-    }
-    
-    this.service.getRandomCard().subscribe(card => {
-      console.log(card);
-
-      if (this.selectedDeck.cards.length >= 60) {
-        console.error('Número máximo de cartas com o mesmo nome alcançado para este baralho!');
+    if (this.selectedDeck.cards.length > 24) {
+      this.loading = true;
+      if (!this.selectedDeck) {
+        console.error('Nenhnum baralho selecionado');
         return;
       }
-
-      this.selectedDeck.cards.push(card);
-      
-      if (this.selectedDeck.cards.length > 24) {
-        this.loading = true;
-        this.deckService.saveDeck(this.selectedDeck);
-        setTimeout(() => {
-          this.loading = false;
-        }, 2000);
+  
+      if (this.selectedDeck.cards.length >= 60) {
+        console.error('Maximum number of cards reached for this deck!');
+        return;
       }
-    });
+      
+      this.service.getRandomCard().subscribe(card => {
+        console.log(card);
+  
+        if (this.selectedDeck.cards.length >= 60) {
+          this.recused = true;
+          setTimeout(() => {
+            this.recused = false;
+          }, 500);
+        } else {
+          this.selectedDeck.cards.push(card);
+          this.deckService.saveDeck(this.selectedDeck);
+          setTimeout(() => {
+            this.loading = false;
+          }, 2000);
+        }
+      });
+    } else {
+      if (!this.selectedDeck) {
+        console.error('Nenhnum baralho selecionado');
+        return;
+      }
+      this.service.getRandomCard().subscribe(card => {
+        console.log(card);
+        this.selectedDeck.cards.push(card);
+      });
+    }
   }
 
-  removeDeck(deck: any) {
-    console.log('removing deck'); 
-    this.deckService.removeDeck(deck.id);
+  onRemoveDeckClicked() {
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+      this.MyDeck = this.deckService.getUserDeck();
+    }, 3000);
   }
-
 }
