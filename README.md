@@ -11,7 +11,7 @@ Meu foco foi colocar no código mais estrutura, design e componentização de co
 
 ## Gerenciador de modulos
 
-- Coponentizado
+- Componentizado
 
 ## Features
 
