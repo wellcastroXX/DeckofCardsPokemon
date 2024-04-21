@@ -1,0 +1,18 @@
+.card {
+  width: 150px;
+  cursor: pointer;
+  display: inline-block;
+  margin: 10px;
+}
+
+.img_card {
+  width: 98%;
+  height: 98%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  z-index: 1007;
+  margin: auto;
+  display: block;
+  cursor: pointer;
+}

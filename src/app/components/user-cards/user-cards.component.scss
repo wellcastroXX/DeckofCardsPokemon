@@ -1,12 +1,12 @@
 .modal {
     position: fixed;
     z-index: 1001;
-    top: 40%;
+    top: 41%;
     left: 50%;
     transform: translate(-50%, -50%);
+    width: 240px;
+    height: 380px;
     background-color: var(--four-color);
-    min-width: 18%;
-    height: 50%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
@@ -15,7 +15,7 @@
     .logo-modal{
         margin: auto; 
         display: block;
-        margin-top: 2rem;
+        margin-top: 1.3rem;
         height: 40px;
     }
     h2{

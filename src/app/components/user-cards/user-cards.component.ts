@@ -11,9 +11,10 @@ import { DeckService } from '../../services/deck.service';
 export class UserCardsComponent {
   @ViewChild('deckInput') deckInput!: ElementRef;
   @ViewChild(ActionsComponent) actionsComponent!: ActionsComponent;
+  @Output() deckName: EventEmitter<string> = new EventEmitter<string>();
   MyDeck: any[] = [];
   isModeDeckCardsInitialized: boolean = false;
-  deckCards: Boolean = false;
+  deckCards: boolean = false; 
   name: string = '';
 
   constructor(private deckService: DeckService) {
@@ -45,9 +46,13 @@ export class UserCardsComponent {
   saveName() {
     this.isModeDeckCardsInitialized = false;
     this.deckCards = false;
-    console.log(this.deckCards);
-    const deck = { id: this.deckService.generateId(), name: this.name, cards: [] };
-    this.deckService.saveDeck(deck);
+    this.deckName.emit(this.name);
+    /* const deck = { id: this.deckService.generateId(), name: this.name, cards: [] };
+    this.deckService.saveDeck(deck); */
+  }
+
+  onDeckCardsChanged(value: boolean) {
+    this.deckCards = value;
   }
 
 }

@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   styleUrl: './actions.component.scss'
 })
 export class ActionsComponent {
+  @Output() deckCardsChanged: EventEmitter<boolean> = new EventEmitter<boolean>();
   @Output() MakeADeckButton = new EventEmitter<void>();
   @Output() ViewDecksButton = new EventEmitter<void>();
   MyDeck: any[] = [];
@@ -28,13 +29,14 @@ export class ActionsComponent {
   }
 
   action3() {
-    this.MyDeck = this.deckService.getUserDeck();
+    window.location.reload();
+    /* this.MyDeck = this.deckService.getUserDeck();
     if(this.MyDeck.length === 0){
       this.makeDeskCards = true;
     }else{
-      this.MakeADeckButton.emit();
       this.ViewDecksButton.emit();
-    }
+      this.deckCardsChanged.emit(false);
+    } */
   }
 
   action4() {

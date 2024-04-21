@@ -33,7 +33,6 @@ decisão de modelo de interface e tempo.
 
 - 1: ng serve
 
-
 Para obter ajuda para começar a desenvolver Angular, consulte o
 [documentação online](https://angular.io/), que oferece tutoriais,
 exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.
