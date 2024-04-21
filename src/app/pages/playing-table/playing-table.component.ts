@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IgxButtonModule, IgxIconModule, IgxRippleModule, IgxTooltipModule } from 'igniteui-angular';
 import { Service } from '../../services/service';
 import { ActionsComponent } from '../../components/actions/actions.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playing-table',
@@ -15,7 +16,7 @@ export class PlayingTableComponent {
   showImage: boolean = false;
   Cards: any;
 
-  constructor(private service: Service) {
+  constructor(private service: Service, private router: Router) {
     this.actionsComponent!;
   }
 
@@ -32,7 +33,7 @@ export class PlayingTableComponent {
 
   back() {
     console.log('back');
-    
+    window.location.reload();
   }
 
 }

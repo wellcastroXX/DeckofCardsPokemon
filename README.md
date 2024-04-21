@@ -1,27 +1,39 @@
-# DeckOfCardsPokemon
+# TCG Pokemon
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.4.
+TCG de cartas do pokemon, desenvolvido em Angular 17+ ***
 
-## Development server
+## Descrição:
+Meu foco foi colocar no código mais estrutura, design e componentização de componentes e serviços.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Arquitetura
 
-## Code scaffolding
+- MVC
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Gerenciador de modulos
 
-## Build
+- Componentizado
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Features
 
-## Running unit tests
+- Infragistics
+- Tailwindcss
+- APIRest GET | POST
+  [documentação online](https://docs.pokemontcg.io/);
+- Armazenamento local
+- Lista de cartas alimentado pela API e gerenciada localmente pelo localstorage por uma
+decisão de modelo de interface e tempo. 
+- Cadastro de baralho
+- Atualizaçãao de baralho
+- Exclusão de baralho
+- Serviço de Requisição
+- UI/UX
+  
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Testar o projeto
 
-## Running end-to-end tests
+- 1: ng serve
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para obter ajuda para começar a desenvolver Angular, consulte o
+[documentação online](https://angular.io/), que oferece tutoriais,
+exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.
+exemplos, orientações sobre desenvolvimento móvel e uma referência completa da API.

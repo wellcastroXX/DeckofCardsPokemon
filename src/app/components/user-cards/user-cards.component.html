@@ -1,5 +1,9 @@
 <div class="flex justify-center space-x-4">
-  <app-actions (MakeADeckButton)="MakeADeck()" (ViewDecksButton)="ViewDecks()"></app-actions>
+  <app-actions 
+    (MakeADeckButton)="MakeADeck()" 
+    (ViewDecksButton)="ViewDecks()"
+    (deckCardsChanged)="onDeckCardsChanged($event)">
+  </app-actions>
   <div *ngIf="isModeDeckCardsInitialized">
     <div *ngIf="actionsComponent?.makeDeskCards == true">
       <div class="modal" >
@@ -20,7 +24,7 @@
     </div>
   </div>
   <div class="table" *ngIf="!isModeDeckCardsInitialized">
-    <app-deck></app-deck>
+    <app-deck [deckCards]="deckCards" [name]="name"></app-deck>
   </div>
 </div>
   
