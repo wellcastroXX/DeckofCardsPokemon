@@ -1,10 +1,26 @@
 <ng-container>
   <div class="modal-container">
-    <div class="modal" *ngFor="let deck of MyDeck">
+    <div class="modal" [class.flip-in-ver-right]="detailRotate" *ngFor="let deck of MyDeck">
       <img class="logo-modal" src="../../../assets/img/logo.png">
-      <h2>{{ deck.name }}</h2>
-      <div class="center-buttons">
-        <button class="details-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
+      <h2 [class.slide-top]="detailRotate">{{ deck.name }}</h2>
+      <div *ngIf="detailRotate" class="details-container">
+        <div class="pok-qtd">
+          <h1>{{ deck.cards.length }}</h1>
+          <span>Pokemons</span>
+        </div>
+        <div class="pok-qtd">
+          <h1>{{ trainerCardCount }}</h1>
+          <span>Cartas de Treinador</span>
+        </div>
+        <div class="pok-qtd-big">
+          <span>Cores das cartas</span>
+          <div class="type-container" *ngFor="let type of typeCounts | keyvalue">
+            <p>{{ type.key }}: {{ type.value }}</p>
+          </div>          
+        </div>
+      </div>
+      <div *ngIf="!detailRotate" class="center-buttons">
+        <button class="details-btn mx-2" igxRipple (click)="showDetails(deck)" btn-action="1">
           Detalhes
         </button>
         <button class="edit-btn mx-2" igxRipple (click)="toggleModeDeckCards(deck)" btn-action="1">
@@ -12,6 +28,13 @@
         </button>
         <button class="remove-btn mx-2" igxRipple (click)="removeDeck(deck)" btn-action="3">
           Remover
+        </button>
+      </div>
+      <div *ngIf="detailRotate" class="close-button">
+        <button class="close-btn mx-2" igxRipple (click)="close()" >
+          <igx-icon fontSet="material" size="large">
+           close
+          </igx-icon>
         </button>
       </div>
     </div>
